@@ -65,7 +65,7 @@
     
     // Create white text for 'return to the homepage'
     const whiteText = document.createElement("span");
-    whiteText.innerHTML = "return to the homepage.";
+    whiteText.innerHTML = "to return to the homepage.";
     whiteText.style = "color:white;";
     
     // Append elements to banner
