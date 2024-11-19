@@ -56,14 +56,21 @@
   if (isRedirected || isInIframe || originatingUrlCookie) {
     bar = document.createElement("div"); // Now this is in the broader scope
     bar.style = "position:fixed;top:0;width:100%;background-color:#00689f;color:#fff;padding:15px 10px;text-align:center;z-index:9999;box-sizing:border-box;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;";
-    bar.innerHTML = "You&nbsp;were&nbsp;redirected&nbsp;here.";
-
+    
     // Create return link
     const returnLink = document.createElement("a");
     returnLink.href = originatingUrl || "#";
-    returnLink.innerHTML = "Click&nbsp;here&nbsp;to&nbsp;go&nbsp;back";
-    returnLink.style = "color:#7dd2f7;text-decoration:underline;margin-left:10px;margin-right:10px";
+    returnLink.innerHTML = "Click here";
+    returnLink.style = "color:#7dd2f7;text-decoration:underline;margin-right:5px;";
+    
+    // Create white text for 'return to the homepage'
+    const whiteText = document.createElement("span");
+    whiteText.innerHTML = "return to the homepage.";
+    whiteText.style = "color:white;";
+    
+    // Append elements to banner
     bar.appendChild(returnLink);
+    bar.appendChild(whiteText);
     document.body.appendChild(bar);
 
     // Use requestAnimationFrame to ensure the banner is fully rendered before adjusting margin
