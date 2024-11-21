@@ -54,23 +54,17 @@
 
   // Show banner if redirected, in iframe, or cookie exists
   if (isRedirected || isInIframe || originatingUrlCookie) {
-    bar = document.createElement("div"); // Now this is in the broader scope
+    bar = document.createElement("div");
     bar.style = "position:fixed;top:0;width:100%;background-color:#00689f;color:#fff;padding:15px 10px;text-align:center;z-index:9999;box-sizing:border-box;font-family:Arial,sans-serif;font-size:16px;font-weight:bold;display:flex;flex-wrap:wrap;justify-content:center;align-items:center;";
     
     // Create return link
     const returnLink = document.createElement("a");
     returnLink.href = originatingUrl || "#";
-    returnLink.innerHTML = "Click here";
-    returnLink.style = "color:#7dd2f7;text-decoration:underline;margin-right:5px;";
-    
-    // Create white text for 'return to the homepage'
-    const whiteText = document.createElement("span");
-    whiteText.innerHTML = "to return to the homepage.";
-    whiteText.style = "color:white;";
+    returnLink.innerHTML = "Click here to continue to savingplaces.org";
+    returnLink.style = "color:#ffffff;text-decoration:underline;";
     
     // Append elements to banner
     bar.appendChild(returnLink);
-    bar.appendChild(whiteText);
     document.body.appendChild(bar);
 
     // Use requestAnimationFrame to ensure the banner is fully rendered before adjusting margin
