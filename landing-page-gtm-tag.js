@@ -6,22 +6,6 @@ Productive Task: https://app.productive.io/2650-4site-interactive-studios-inc/ta
 This script manages time-based redirections for specific dates on our landing pages. It checks the current date and, if it matches a target date, redirects users to a designated URL for that day. The script also includes a suppression feature: it sets a cookie to prevent multiple redirects within a 24-hour period and allows users to opt out of redirection by  adding a 'no-redirect' parameter to the URL. Additionally, any query parameters from the original URL are preserved and passed along to the redirect destination.
 */
   
-/* Added by 4Site Studios on 2024-11-14
-
-Source Code: https://github.com/4site-interactive-studios/4site-nthp-eoy-redirect/blob/main/landing-page-gtm-tag.js
-Productive Task: https://app.productive.io/2650-4site-interactive-studios-inc/tasks/9437529
-
-This script manages time-based redirections for specific dates on our landing pages. It checks the current date and, if it matches a target date, redirects users to a designated URL for that day. The script also includes a suppression feature: it sets a cookie to prevent multiple redirects within a 24-hour period and allows users to opt out of redirection by  adding a 'no-redirect' parameter to the URL. Additionally, any query parameters from the original URL are preserved and passed along to the redirect destination.
-*/
-  
-/* Added by 4Site Studios on 2024-11-14
-
-Source Code: https://github.com/4site-interactive-studios/4site-nthp-eoy-redirect/blob/main/landing-page-gtm-tag.js
-Productive Task: https://app.productive.io/2650-4site-interactive-studios-inc/tasks/9437529
-
-This script manages time-based redirections for specific dates on our landing pages. It checks the current date and, if it matches a target date, redirects users to a designated URL for that day. The script also includes a suppression feature: it sets a cookie to prevent multiple redirects within a 24-hour period and allows users to opt out of redirection by  adding a 'no-redirect' parameter to the URL. Additionally, any query parameters from the original URL are preserved and passed along to the redirect destination.
-*/
-  
 (function() {
 var urlsByDate = {
     "12-03": "https://support.savingplaces.org/page/75455/donate/1?transaction.othamt1=HF25C2SDGENC",
