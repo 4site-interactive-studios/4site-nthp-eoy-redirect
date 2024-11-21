@@ -1,4 +1,4 @@
-/* Added by 4Site Studios on 2024-11-14
+/* Added by 4Site Studios on 2024-11-21
 
 Source Code: https://github.com/4site-interactive-studios/4site-nthp-eoy-redirect/blob/main/landing-page-gtm-tag.js
 Productive Task: https://app.productive.io/2650-4site-interactive-studios-inc/tasks/9437529
@@ -39,8 +39,9 @@ if (document.cookie.indexOf(suppressionCookie) !== -1) {
 function buildRedirectUrl(redirectUrl) {
     var redirectParams = new URLSearchParams(queryParams.toString());
     redirectParams.append("was-redirected", "");
-    redirectParams.append("originating-url", window.location.href); // Append the current URL as originating-url
-    return redirectUrl + "?" + redirectParams.toString();
+    redirectParams.append("originating-url", window.location.href);
+    var separator = redirectUrl.indexOf('?') === -1 ? '?' : '&';
+    return redirectUrl + separator + redirectParams.toString();
 }
 
 // Get the current date or the simulated date from query params
