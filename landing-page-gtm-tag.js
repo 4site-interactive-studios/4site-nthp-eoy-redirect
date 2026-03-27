@@ -1,4 +1,4 @@
-/* Added by 4Site Studios on 2024-11-21
+/* Added by 4Site Studios on 2024-11-21, new year revision added 2026-03-25
 
 Source Code: https://github.com/4site-interactive-studios/4site-nthp-eoy-redirect/blob/main/landing-page-gtm-tag.js
 Productive Task: https://app.productive.io/2650-4site-interactive-studios-inc/tasks/9437529
@@ -8,9 +8,7 @@ This script manages time-based redirections for specific dates on our landing pa
   
 (function() {
 var urlsByDate = {
-    "12-03": "https://support.savingplaces.org/page/75455/donate/1?transaction.othamt1=HF25C2SDGENC",
-    "12-30": "https://support.savingplaces.org/page/75455/donate/1?transaction.othamt1=HF25C2SDGENC",
-    "12-31": "https://support.savingplaces.org/page/75455/donate/1?transaction.othamt1=HF25C2SDGENC"
+    "2026-04-30": "https://support.savingplaces.org/page/95765/donate/1?transaction.othamt1=HF2643SDGENC"
 };
 
 var suppressionCookie = "redirectSuppressed";
@@ -47,11 +45,10 @@ function buildRedirectUrl(redirectUrl) {
 // Get the current date or the simulated date from query params
 function getCurrentOrSimulatedDate() {
     var simulateDate = queryParams.get("simulate-date");
-    if (simulateDate && /^\d{2}-\d{2}$/.test(simulateDate)) {
+    if (simulateDate && /^\d{4}-\d{2}-\d{2}$/.test(simulateDate)) {
     return simulateDate; // Use the simulated date if provided and valid
     }
-    var today = new Date();
-    return String(today.getMonth() + 1).padStart(2, '0') + "-" + String(today.getDate()).padStart(2, '0');
+    return new Date().toISOString().split('T')[0];
 }
 
 // Check if the date is one of the specified target dates
